@@ -1,6 +1,6 @@
 
 				PRED_CUTOFF README
-			http://citrusgreening.org/pred_cutoff.html
+			http://citrusgreening.org/Pred_cutoff.html
 
 
 
