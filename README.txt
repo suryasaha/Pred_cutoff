@@ -4,6 +4,18 @@
 
 
 
+CITATION
+
+Please cite the following publication if you use this pipeline
+Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
+Website: http://apsjournals.apsnet.org/doi/abs/10.1094/MPMI-04-13-0090-CR
+
+
+CONTACT
+
+Please contact suryasaha at cornell edu for questions/suggestions.
+
 
 STEP 1
 Build_model.pl - Build a model (HMM or PWM) using a ClustalW alignment of DNA motifs
