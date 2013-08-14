@@ -1,6 +1,6 @@
 # Call:  R --slave --no-save --no-restore --no-environ --silent --args 100 < gpd.R 
 # count of art genomes is 100
-
+# https://github.com/suryasaha/Pred_cutoff
 
 # ===========================================================================
 #
