@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 # PPath@Cornell
 # Surya Saha  
-# http://citrusgreening.org/pred_cutoff
+# https://github.com/suryasaha/Pred_cutoff
 
 # ===========================================================================
 #
