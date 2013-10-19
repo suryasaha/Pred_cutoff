@@ -61,7 +61,7 @@ options are mandatory (see below).
    
 =head1 AUTHOR
 
-Surya Saha, ss2489@cornell.edu
+Surya Saha, ss2489 near cornell.edu , \@SahaSurya
 
 =cut
 
