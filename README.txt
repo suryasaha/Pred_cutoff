@@ -133,7 +133,7 @@ NOTES
 Please make sure this script is run in the directory containing the genomes directory created by Create_art_genomes.pl. This script requires patser (http://ural.wustl.edu/src/patser-v3e.1.tar.gz) and HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and in your path. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. You need to have the BioPerl library installed and accessible (http://www.bioperl.org/wiki/Installing_BioPerl). This script has been tested on Linux and R (v 3.0.1).
 
 RESULTS
-Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits were found in the artificial genomes. It is recommended to focus on the first set of non-"NaN" predictions in the eval.1 GFF file. 
+Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits were found in the artificial genomes. It is recommended to focus on the set of non-"NaN" predictions in the eval.1 GFF file. 
 
 COMMAND-LINE OPTIONS
 Command-line options can be abbreviated to single-letter options, e.g. -f instead of --file. Some options are mandatory (see below).

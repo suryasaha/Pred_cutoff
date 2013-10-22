@@ -65,7 +65,7 @@ BioPerl). This script has been tested on Linux and R (v 3.0.1).
 =head2 RESULTS
 
 Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits 
-were found in the artificial genomes. It is recommended to focus on the first set of non-"NaN" predictions 
+were found in the artificial genomes. It is recommended to focus on the set of non-"NaN" predictions 
 in the eval.1 GFF file. 
 
 =head1 COMMAND-LINE OPTIONS
