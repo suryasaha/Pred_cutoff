@@ -102,7 +102,7 @@ SYNOPSIS
 Create_art_genomes.pl --file seq.fna --copies copies
   
 DESCRIPTION
-This script reads in a Fasta formatted DNA sequence representing the whole genome sequence of a organism. It requires the seqpp toolkit (http://stat.genopole.cnrs.fr/seqpp/) to be installed. It uses the estim_m tool to compute the optimal order for the markov chain to simulate the genome. The simul_m tool is then used to create artificial genomes that are placed inside the genomes directory. 
+This script reads in a Fasta formatted DNA sequence representing the whole genome sequence of a organism. It requires the seqpp toolkit (http://stat.genopole.cnrs.fr/seqpp/, ver 4.2.0+) to be installed. It uses the estim_m tool to compute the optimal order for the markov chain to simulate the genome. The simul_m tool is then used to create artificial genomes that are placed inside the genomes directory. 
 
 NOTES
 Please make sure that the estim_m and simul_m tools are accessible from the command-line in the directory where you are running this script. The Fasta file should have a single DNA sequence. The artificial genomes created will be stored in genomes directory. This script has been tested on Linux.
@@ -130,16 +130,13 @@ Create_art_genomes.pl script. E value estimates are computed for each prediction
 reported in GFF format.
 
 NOTES
-Please make sure this script is run in the directory containing the genomes directory created by
-Create_art_genomes.pl. This script requires patser (http://ural.wustl.edu/patser-v3e.1.tar.gz) and
-HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and 
-in your path. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. 
-You need to have the BioPerl library installed and accessible (http://www.bioperl.org/wiki/Installing_
-BioPerl). This script has been tested on Linux.
+Please make sure this script is run in the directory containing the genomes directory created by Create_art_genomes.pl. This script requires patser (http://ural.wustl.edu/src/patser-v3e.1.tar.gz) and HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and in your path. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. You need to have the BioPerl library installed and accessible (http://www.bioperl.org/wiki/Installing_BioPerl). This script has been tested on Linux and R (v 3.0.1).
+
+RESULTS
+Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits were found in the artificial genomes. It is recommended to focus on the first set of non-"NaN" predictions in the eval.1 GFF file. 
 
 COMMAND-LINE OPTIONS
-Command-line options can be abbreviated to single-letter options, e.g. -f instead of --file. Some options
-are mandatory (see below).
+Command-line options can be abbreviated to single-letter options, e.g. -f instead of --file. Some options are mandatory (see below).
 
    --file         <file>      Fasta file whole genome DNA sequence (required)
    --copies       <copies>    Number of artificial genomes created using Create_art_genomes (required)

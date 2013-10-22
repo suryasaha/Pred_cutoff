@@ -38,10 +38,10 @@ Create_art_genomes.pl - Create optimally ordered artificial genomes using the se
 =head1 DESCRIPTION
 
 This script reads in a Fasta formatted DNA sequence representing the whole genome sequence of 
-a organism. It requires the seqpp toolkit (http://stat.genopole.cnrs.fr/seqpp/) to be installed. 
-It uses the estim_m tool to compute the optimal order for the markov chain to simulate the genome.
-The simul_m tool is then used to create artificial genomes that are placed inside the genomes 
-directory. 
+a organism. It requires the seqpp toolkit (http://stat.genopole.cnrs.fr/seqpp/, ver 4.2.0+) to 
+be installed. It uses the estim_m tool to compute the optimal order for the markov chain to 
+simulate the genome. The simul_m tool is then used to create artificial genomes that are placed 
+inside the genomes directory. 
 
 =head2 NOTES
 
