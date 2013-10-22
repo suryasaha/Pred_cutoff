@@ -60,7 +60,13 @@ Create_art_genomes.pl. This script requires patser (http://ural.wustl.edu/src/pa
 HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and 
 in your path. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. 
 You need to have the BioPerl library installed and accessible (http://www.bioperl.org/wiki/Installing_
-BioPerl). This script has been tested on Linux.
+BioPerl). This script has been tested on Linux and R (v 3.0.1).
+
+=head2 RESULTS
+
+Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits 
+were found in the artificial genomes. It is recommended to focus on the first set of non-"NaN" predictions 
+in the eval.1 GFF file. 
 
 =head1 COMMAND-LINE OPTIONS
 
@@ -323,7 +329,7 @@ elsif($engine eq 'HMMER'){
 			chomp $rec;
 			@temp = split("\t",$rec);
 			#if(($counts{sprintf("%.1f",$temp[5])}/$copies) > 1){
-			if($evals{sprintf("%.1f",$temp[5])} > 1.0){
+			if(($evals{sprintf("%.1f",$temp[5])} > 1.0) || ($evals{$temp[5]} eq 'NaN')){
 				$highctr++;
 				print OUT2 $rec," Eval ",$evals{sprintf("%.1f",$temp[5])},";\n";	
 			}
@@ -338,7 +344,7 @@ elsif($engine eq 'HMMER'){
 }
 
 if($verbose){
-	print STDERR "Predictions with E value < 1.0 : $lowctr\n"; print STDERR "Predictions with E value rate > 1.0 : $highctr\n";
+	print STDERR "Predictions with E value < 1.0 : $lowctr\n"; print STDERR "Predictions with E value rate > 1.0 or with low signal : $highctr\n";
 	my($user_t,$system_t,$cuser_t,$csystem_t); ($user_t,$system_t,$cuser_t,$csystem_t) = times;
 	print STDERR "\n\nSystem time for process: $system_t\n"; print STDERR "User time for process: $user_t\n";
 }
