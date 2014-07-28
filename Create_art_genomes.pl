@@ -50,6 +50,9 @@ in the directory where you are running this script. The Fasta file should have a
 sequence. The artificial genomes created will be stored in genomes directory. This script has 
 been tested on Linux.
 
+Please cite the following publication if you use this pipeline
+Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
 =head1 COMMAND-LINE OPTIONS
 
 Command-line options can be abbreviated to single-letter options, e.g. -f instead of --file. Some

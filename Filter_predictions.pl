@@ -43,6 +43,10 @@ Filter_predictions.pl - Filter out the predictions that are located within a use
 This script scans the list of predictions and simply pulls out those within a user defined range. The 
 input files need to be in GFF3 format such as those produced by Pred_cutoff.pl.
 
+Please cite the following publication if you use this pipeline
+Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
+
 =head1 COMMAND-LINE OPTIONS
 
 Command-line options can be abbreviated to single-letter options. e.g. -f instead of --file. All options

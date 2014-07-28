@@ -62,6 +62,10 @@ in your path. We do not recommend using HMMER 3.0 since it is not optimized for 
 You need to have the BioPerl library installed and accessible (http://www.bioperl.org/wiki/Installing_
 BioPerl). This script has been tested on Linux and R (v 3.0.1).
 
+Please cite the following publication if you use this pipeline
+Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
+
 =head2 RESULTS
 
 Predictions in the output eval GFF files will have "NaN" as E value for scores where insufficient hits 

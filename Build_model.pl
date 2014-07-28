@@ -57,6 +57,10 @@ This script has been tested on Linux and requires make-matrix (ftp://www.genetic
 and HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and 
 accessible. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. 
 
+Please cite the following publication if you use this pipeline
+Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
+
 =head1 COMMAND-LINE OPTIONS
 
 Command-line options can be abbreviated to single-letter options, e.g. -f instead of --file. All options

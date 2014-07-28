@@ -21,6 +21,10 @@
 #
 # ===========================================================================
 
+# Please cite the following publication if you use this pipeline
+# Bound to succeed: Transcription factor binding site prediction and its contribution to understanding virulence and environmental adaptation in bacterial plant pathogens
+# Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions. doi: 10.1094/MPMI-04-13-0090-CR
+
 rm(list=ls())
 
 #data
