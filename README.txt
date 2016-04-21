@@ -1,6 +1,6 @@
 
 				PRED_CUTOFF README
-			http://citrusgreening.org/Pred_cutoff.html
+
 
 
 
@@ -12,9 +12,13 @@ Saha, Surya and Lindeberg, Magdalen (2013) Molecular Plant-Microbe Interactions.
 Website: http://apsjournals.apsnet.org/doi/abs/10.1094/MPMI-04-13-0090-CR
 
 
+DEPENDENCIES
+
+Create_art_genomes.pl requires the seqpp toolkit (http://stat.genopole.cnrs.fr/seqpp/, ver 4.2.0+). 
+
 CONTACT
 
-Please contact suryasaha at cornell edu for questions/suggestions.
+Please contact suryasaha at cornell edu for questions/suggestions OR just create a issue! https://github.com/suryasaha/Pred_cutoff/issues
 
 
 STEP 1
