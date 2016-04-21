@@ -10,8 +10,6 @@ usage(){
 	exit 1
 }
 
-grep -v '^#' PtoDC3000-HrpL.hmm.tbl|  awk -v OFS='\t' '{print $1,"nhmmer","match_region",$9,$10,$13,$12,".","Score="$14}' > PS_14_PtoDC3000-HrpL.hmm.gff
-
 if [ "$#" -ne 2 ]
 then
 	usage
