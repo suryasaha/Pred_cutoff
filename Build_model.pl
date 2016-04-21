@@ -54,7 +54,7 @@ and remove redundant predictions at the end.
 =head2 NOTES
 
 This script has been tested on Linux and requires make-matrix (ftp://www.genetics.wustl.edu/pub/stormo/Consensus)
-and HMMER 2.3.2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and 
+and HMMER 3.1b2 (ftp://selab.janelia.org/pub/software/hmmer/2.3.2/hmmer-2.3.2.tar.gz) to be installed and 
 accessible. We do not recommend using HMMER 3.0 since it is not optimized for DNA/DNA comparisons. 
 
 Please cite the following publication if you use this pipeline
@@ -101,13 +101,14 @@ print STDERR "\n";
 
 # Prep work
 my ($rec,$ctr,$j,$k,@temp,$seq,%counts);
-unless(open(IN,$file)){print "not able to open $file\n\n";exit 1;}
+my ($IN,$OUT);
+unless(open($IN,'<',$file)){print "not able to open $file\n\n";exit 1;}
 $seq='';
 while ($rec=<IN>){
 	if ($rec=~ /^>/){ next;}
 	else{ chomp $rec; $seq=$seq.$rec;}
 }
-close(IN);
+close($IN);
 
 #create model for engine
 if($engine eq 'patser'){
@@ -123,7 +124,7 @@ if($engine eq 'patser'){
 	$counts{'C'}=($seq =~ tr/C/Z/);
 	if($counts{'C'}==0){ $counts{'C'}=($seq =~ tr/c//);}
 	if (-e "$file.alphabet"){ unlink "$file.alphabet" or warn "cannot delete old alphabet file: $!\n";}
-	unless(open(OUT,">$file.alphabet")){print "not able to open $file.alphabet\n";exit 1;}
+	unless(open($OUT,'>',"$file.alphabet")){print "not able to open $file.alphabet\n";exit 1;}
 	print OUT "\#\n\# Alphabet file for patser\n\#\n\n";
 	$j=$counts{'A'}+$counts{'T'}; $j=sprintf("%.1f", $j/$i); print OUT "a:t $j\n";
 	$j=$counts{'G'}+$counts{'C'}; $j=sprintf("%.1f", $j/$i); print OUT "g:c $j\n";
@@ -148,14 +149,14 @@ elsif($engine eq 'HMMER'){
 	$counts{'C'}=($seq =~ tr/C/Z/);
 	if($counts{'C'}==0){ $counts{'C'}=($seq =~ tr/c//);}
 	if (-e "$file.null"){ unlink "$file.null" or warn "cannot delete old null file: $!\n";}
-	unless(open(OUT,">$file.null")){print "not able to open $file.null\n";exit 1;}
-	print OUT "\#\n\# Null model for HMMER\n\#\n\nNucleic\n\n";
+	unless(open($OUT,'>',"$file.null")){print "not able to open $file.null\n";exit 1;}
+	print $OUT "\#\n\# Null model for HMMER\n\#\n\nNucleic\n\n";
 	$j=sprintf("%.6f", $counts{'A'}/$i); print OUT "$j \# A\n";
 	$j=sprintf("%.6f", $counts{'C'}/$i); print OUT "$j \# C\n";
 	$j=sprintf("%.6f", $counts{'G'}/$i); print OUT "$j \# G\n";
 	$j=sprintf("%.6f", $counts{'T'}/$i); print OUT "$j \# T\n\n";
 	$j=sprintf("%.6f", $mlen/($mlen+1)); print OUT "$j \# p1 = $mlen/($mlen+1)\n";
-	close (OUT);
+	close ($OUT);
 	%counts=();
 	
 	#run hmmbuild and calibrate
